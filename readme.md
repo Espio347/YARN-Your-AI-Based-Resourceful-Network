@@ -1,5 +1,5 @@
 <html>
  <body>
-  <title> YARN OFFICIAL REPO </title>
+  <h1>YARN OFFICIAL REPOSITORY</h1>
  </body>
 </html>
