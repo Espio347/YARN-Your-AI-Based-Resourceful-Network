@@ -4,13 +4,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Progress Updates
 ```markdown
-- [x] Implemented Authentication
-- [x] Implemented Sign-In
+[✓] Implemented Authentication
+[✓] Implemented Sign-In
 ```
 
 # APP TIPS
-------------------
-## Getting Started
 
 First, run the development server:
 
