@@ -6,7 +6,13 @@ Progress Updates
 ```markdown
 [✓] Implemented Authentication
 [✓] Implemented Sign-In
+[✓] Implemented Basic Home Page
+[✓] Implemented TopBar
 ```
+
+# Development Notes
+
+ - Need to Design and Implement Logo and Favicon
 
 # APP TIPS
 
