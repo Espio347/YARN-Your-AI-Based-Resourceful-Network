@@ -6,7 +6,7 @@ Progress Updates
 ```markdown
 [✓] Implemented Authentication
 [✓] Implemented Sign-In
-[✓] Implemented Basic Home Page
+[✓] Implemented Home Page
 [✓] Implemented TopBar
 ```
 
