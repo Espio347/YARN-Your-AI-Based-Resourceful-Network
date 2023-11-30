@@ -8,6 +8,7 @@ Progress Updates
 [✓] Implemented Sign-In
 [✓] Implemented Basic Home Page
 [✓] Implemented TopBar
+[✓] Implemented Left SideBar
 ```
 
 # Development Notes
@@ -15,6 +16,8 @@ Progress Updates
  - Need to Design and Implement Logo and Favicon
 
 # APP TIPS
+
+53:21
 
 First, run the development server:
 
