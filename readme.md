@@ -7,8 +7,13 @@ Progress Updates
 [✓] Implemented Authentication
 [✓] Implemented Sign-In
 [✓] Implemented Home Page
-[✓] Implemented TopBar
+[✓] Implemented Top Bar
 [✓] Implemented Left SideBar
+[✓] Implemented Bottom Bar
+[✓] Implemented Right SideBar
+[✓] Implemented Mobile View
+[✓] Implemented Clerk Dark Theme
+[✓] Implemented Finalised Home Page
 ```
 
 # Development Notes
@@ -17,7 +22,7 @@ Progress Updates
 
 # APP TIPS
 
-53:21
+01:03:00
 
 First, run the development server:
 
