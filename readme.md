@@ -1,4 +1,6 @@
-Your AI-Based Resourceful Network
+# Your AI-Based Resourceful Network
+
+<img src="/media_resources/cover.jpg" alt="cover" />
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).Combining Social Media with AI with Full Focus Based Interface.
 
@@ -18,7 +20,8 @@ Progress Updates
 
 # Development Notes
 
- - Need to Design and Implement Logo and Favicon
+ - Need to Design and Implement Logo (Now Done)
+ - Need to Implement Favicon
 
 # APP TIPS
 
