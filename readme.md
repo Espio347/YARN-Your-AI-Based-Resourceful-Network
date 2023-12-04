@@ -1,6 +1,6 @@
 # Your AI-Based Resourceful Network
 
-<img src="media_resources/cover.jpg" width="90%"></img>
+![cover](https://github.com/Espio347/YARN-Your-AI-Based-Resourceful-Network/assets/92114546/defb0c64-9eac-47f1-b219-13fe555e084f)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).Combining Social Media with AI with Full Focus Based Interface.
 
