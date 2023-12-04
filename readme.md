@@ -1,6 +1,6 @@
 # Your AI-Based Resourceful Network
 
-<img src="/media_resources/cover.jpg" alt="cover" />
+![Cover](/media_resources/cover.jpg)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).Combining Social Media with AI with Full Focus Based Interface.
 
