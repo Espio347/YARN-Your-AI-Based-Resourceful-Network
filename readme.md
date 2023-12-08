@@ -16,6 +16,7 @@ Progress Updates
 [✓] Implemented Mobile View
 [✓] Implemented Clerk Dark Theme
 [✓] Implemented Finalised Home Page
+[✓] Implemented Onboarding Page(Backend still not working)
 ```
 
 # Development Notes
@@ -25,7 +26,7 @@ Progress Updates
 
 # APP TIPS
 
-01:03:00
+01:43:30
 
 First, run the development server:
 
