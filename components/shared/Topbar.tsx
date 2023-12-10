@@ -21,7 +21,7 @@ function Topbar() {
         {/* Focus Mode Button */}
         {focusModeLink.map((link, index) => (
           <Link href={link.route} key={index} passHref>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 cursor-pointer">
               <Image className="rounded-lg" src={link.imgURL} alt="Focus Mode" width={32} height={32} />
             </div>
           </Link>

@@ -21,6 +21,8 @@ Progress Updates
 [✓] Implemented Backend Logic
 [✓] Implemented Frames
 [✓] Implemented Frame Posting
+[✓] Implemented Frame Card
+[✓] Implemented Reply System
 ```
 
 # Development Notes
@@ -30,7 +32,7 @@ Progress Updates
 
 # APP TIPS
 
-03:00:00
+03:25:40
 
 First, run the development server:
 

@@ -60,3 +60,39 @@ export async function fetchFrames(pageNumber = 1, pageSize=1) {
 
     return {frames,isNext};
 }
+
+export async function fetchFrameById(id:string) {
+    connectToDB();
+    try {
+        //TODO POPULATE FLOCK
+        const frame = await Frame.findById(id)
+        .populate({
+            path: 'author',
+            model: User,
+            select: '_id id name image'
+        })
+        .populate({
+            path: 'children',
+            populate: [
+                {
+                    path: 'author',
+                    model: User,
+                    select: '_id id name parentId image'
+                },
+                {
+                    path: 'children',
+                    model: Frame,
+                    populate: {
+                        path: 'author',
+                        model: User,
+                        select: "_id id name parentId image"
+                    }
+                }
+            ]
+        }).exec();
+
+        return frame;
+    } catch (error: any) {
+        throw new Error(`Error fetching thread: ${error.message}`)
+    }
+}
