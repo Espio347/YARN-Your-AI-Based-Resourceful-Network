@@ -17,7 +17,7 @@ export const sidebarLinks = [
     {
       imgURL: "/assets/create.svg",
       route: "/create-frame",
-      label: "Create Frame",
+      label: "Create",
     },
     {
       imgURL: "/assets/community.svg",
@@ -46,7 +46,7 @@ export const sidebarLinks = [
   export const focusModeLink = [
     {
       imgURL: "/assets/focus.gif",
-      route: "/",
+      route: "/zero-in-mode(beta)",
       label: "Focus Mode"
     }
   ];

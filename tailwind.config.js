@@ -173,7 +173,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        "primary-500": "#877EFF",
+        "primary-500": "#681195",
         "secondary-500": "#FFB620",
         blue: "#0095F6",
         "logout-btn": "#FF5A5A",
@@ -210,6 +210,9 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'sign-in-back': "url('/assets/backsign.png')",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

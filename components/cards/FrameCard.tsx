@@ -67,8 +67,8 @@ const FrameCard = ({
                                     <Image 
                                     src="/assets/heart-gray.svg" 
                                     alt="heart"
-                                    width={24}
-                                    height={24}
+                                    width={18}
+                                    height={18}
                                     className="cursor-pointer object-contain"
                                     /> 
 
@@ -76,8 +76,8 @@ const FrameCard = ({
                                         <Image 
                                         src="/assets/reply.svg" 
                                         alt="reply"
-                                        width={24}
-                                        height={24}
+                                        width={18}
+                                        height={18}
                                         className="cursor-pointer object-contain"
                                         /> 
                                     </Link>
@@ -85,16 +85,16 @@ const FrameCard = ({
                                     <Image 
                                     src="/assets/repost.svg" 
                                     alt="repost"
-                                    width={24}
-                                    height={24}
+                                    width={18}
+                                    height={18}
                                     className="cursor-pointer object-contain"
                                     /> 
 
                                     <Image 
                                     src="/assets/share.svg" 
                                     alt="share"
-                                    width={24}
-                                    height={24}
+                                    width={18}
+                                    height={18}
                                     className="cursor-pointer object-contain"
                                     /> 
                                 </div>
