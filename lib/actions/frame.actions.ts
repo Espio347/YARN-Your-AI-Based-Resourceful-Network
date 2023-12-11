@@ -96,3 +96,31 @@ export async function fetchFrameById(id:string) {
         throw new Error(`Error fetching thread: ${error.message}`)
     }
 }
+
+export async function addCommentToFrame(
+    frameId: string,
+    commentText: string,
+    userId: string,
+    path: string
+) {
+    connectToDB();
+    try {
+        const originalFrame = await Frame.findById(frameId);
+
+        if(!originalFrame) {
+            throw new Error("Oops! Frame not Found!")
+        }
+
+        const commentFrame = new Frame({
+            text: commentText,
+            author: userId,
+            parentId: frameId
+        })
+        const savedCommentFrame = await commentFrame.save();
+        originalFrame.children.push(savedCommentFrame._id);
+        await originalFrame.save();
+        revalidatePath(path);
+    } catch (error: any) {
+       throw new Error(`Error adding Comment: $(error.message)`) 
+    }
+}
