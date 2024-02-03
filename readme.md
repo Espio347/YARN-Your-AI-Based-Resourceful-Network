@@ -23,16 +23,17 @@ Progress Updates
 [✓] Implemented Frame Posting
 [✓] Implemented Frame Card
 [✓] Implemented Reply System
+[✓] Implemented Profile Page(Yet To Complete)
 ```
 
 # Development Notes
 
  - Need to Design and Implement Logo (Now Done)
- - Need to Implement Favicon
+ - Need to Implement Favicon (Now Done)
 
 # APP TIPS
 
-03:45:30
+03:59:00
 
 First, run the development server:
 

@@ -37,7 +37,7 @@ export const sidebarLinks = [
     { value: "tagged", label: "Tagged", icon: "/assets/tag.svg" },
   ];
   
-  export const communityTabs = [
+  export const flockTabs = [
     { value: "frames", label: "Frames", icon: "/assets/reply.svg" },
     { value: "members", label: "Members", icon: "/assets/members.svg" },
     { value: "requests", label: "Requests", icon: "/assets/request.svg" },
