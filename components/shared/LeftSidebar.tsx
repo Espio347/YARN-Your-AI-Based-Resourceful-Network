@@ -1,20 +1,30 @@
 "use client"
-import { SignOutButton, SignedIn } from "@clerk/nextjs";
+import { SignOutButton, SignedIn , useAuth} from "@clerk/nextjs";
 import { sidebarLinks } from '@/constants'
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname, useRouter} from "next/navigation";
 
 function LeftSidebar() {
     const router = useRouter();
     const pathname = usePathname();
+    const auth = useAuth();
+    const userId = auth?.userId;
     return (
      <section className="custom-scrollbar leftsidebar">
        <div className="flex w-full flex-1 flex-col gap-6 px-6">
          {sidebarLinks.map((link) => {
          const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
+
+         let href = link.route;
+         if (link.route === '/profile' && typeof userId === 'string') {
+          href = `${link.route}/${userId}`;
+          }
+        
+        
+
          return (
-          <Link href={link.route}
+          <Link href={href}
           key={link.label}
           className={`leftsidebar_link ${
             isActive && 'bg-primary-500'}`}

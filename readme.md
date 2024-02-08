@@ -33,7 +33,7 @@ Progress Updates
 
 # APP TIPS
 
-03:59:00
+04:13:40
 
 First, run the development server:
 

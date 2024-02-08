@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import User from "../models/user.model";
 import { connectToDB } from "../mongoose"
+import Frame from "../models/frame.model";
 
 interface Params {
     userId: string,
@@ -55,5 +56,30 @@ export async function fetchUser(userId: string) {
         // })
     } catch (error : any) {
         throw new Error(`Failed to fetch user: ${error.message}`)
+    }
+}
+
+export async function  fetchUserPosts(userId: string) {
+    try {
+        connectToDB();
+        //TO-DO Populate Community
+        const frames = await User.findOne({id:userId}).populate(
+            {
+                path: 'frames',
+                model: Frame,
+                populate: {
+                    path: 'children',
+                    model: Frame,
+                    populate: {
+                        path: 'author',
+                        model: User,
+                        select: 'name image id'
+                    }
+                }
+            }
+        )
+        return frames;
+    } catch (error: any) {
+        throw new Error(`Failed to fetch user posts: ${error.message}`)
     }
 }
