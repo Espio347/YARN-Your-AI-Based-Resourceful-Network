@@ -24,6 +24,8 @@ Progress Updates
 [✓] Implemented Frame Card
 [✓] Implemented Reply System
 [✓] Implemented Profile Page(Yet To Complete)
+[✓] Implemented Search Page(Searchbar is Yert To Complete)
+[✓] Implemented Activity Page
 ```
 
 # Development Notes
@@ -33,7 +35,7 @@ Progress Updates
 
 # APP TIPS
 
-04:16:00
+04:51:30
 
 First, run the development server:
 
