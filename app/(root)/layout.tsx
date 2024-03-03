@@ -6,6 +6,7 @@ import Topbar from '@/components/shared/Topbar'
 import LeftSidebar from '@/components/shared/LeftSidebar'
 import RightSidebar from '@/components/shared/RightSidebar'
 import Bottombar from '@/components/shared/Bottombar'
+import Chatbot from '@/components/chatbot/Chatbot'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,7 +33,8 @@ export default function RootLayout({
            {children}
            </div>
           </section>
-          <RightSidebar />
+          
+          <Chatbot />
         </main>
         <Bottombar/>
         </body>

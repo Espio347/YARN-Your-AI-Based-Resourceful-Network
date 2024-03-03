@@ -26,6 +26,7 @@ Progress Updates
 [✓] Implemented Profile Page(Yet To Complete)
 [✓] Implemented Search Page(Searchbar is Yert To Complete)
 [✓] Implemented Activity Page
+[✓] Implemented Fluffy, the AI Chatbot
 ```
 
 # Development Notes

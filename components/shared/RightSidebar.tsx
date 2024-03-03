@@ -9,7 +9,7 @@ export default async function RightSidebar() {
   // Remove duplicate suggested people based on 'id' and exclude current user
   const uniqueSuggestedPeople = result.frames.reduce((acc, frame) => {
     const existingFrame = acc.find(
-      (item) => item.author.id === frame.author.id || user?.id === frame.author.id
+      (item : any) => item.author.id === frame.author.id || user?.id === frame.author.id
     );
     if (!existingFrame && user?.id !== frame.author.id) {
       acc.push(frame);
@@ -29,7 +29,7 @@ export default async function RightSidebar() {
             <p className="no-result">It's Quiet for Now</p>
           ) : (
             <>
-              {uniqueSuggestedPeople.map((frame) => (
+              {uniqueSuggestedPeople.map((frame: any) => (
                 <SuggestPeopleCard
                   key={frame._id}
                   id={frame._id}
