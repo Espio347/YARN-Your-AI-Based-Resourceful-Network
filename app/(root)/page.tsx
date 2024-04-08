@@ -22,6 +22,7 @@ export default async function Home() {
               parentId={frame.parentId}
               content={frame.text}
               author={frame.author}
+              image={frame.image}
               flock={frame.flock}
               createdAt={frame.createdAt}
               comments={frame.children}

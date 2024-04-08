@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const frameSchema = new mongoose.Schema({
-    text: {type: String, required: true},
+    text: { type: String, required: true },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -23,7 +23,10 @@ const frameSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Frame'
         }
-    ]
+    ],
+    image: { 
+        type: String 
+    } 
 });
 
 const Frame = mongoose.models.Frame || mongoose.model('Frame', frameSchema);

@@ -6,7 +6,7 @@ interface Props {
     currentUserId: string;
     parentId: string | null;
     content: string;
-    image?: string; // New prop for image content
+    image: string; 
     author: {
         name: string;
         image: string;
@@ -25,7 +25,6 @@ interface Props {
     }[]
     isComment?: boolean;
 }
-
 
 const FrameCard = ({
     id,
@@ -63,10 +62,16 @@ const FrameCard = ({
                         </Link>
 
                         {content && <p className="empty-2 text-small-regular text-light-2">{content}</p>}
-
+                            
                         {image && (
                             <div className="image-container">
-                                <img src={image} alt="Posted Image" className="posted-image" />
+                                <Image 
+                                    src={image}
+                                    alt="Posted Image"
+                                    width={500} // Adjust width and height as needed
+                                    height={500}
+                                    className="posted-image"
+                                />
                             </div>
                         )}
 

@@ -9,29 +9,33 @@ interface Params {
     text: string,
     author: string,
     flockId: string | null,
-    path: string
+    path: string,
+    image: string
 }
 
-export async function createFrame({text, author, flockId, path}: Params) {
+export async function createFrame({ text, author, flockId, path, image }: Params & { image: string }) {
     try {
         connectToDB();
 
-    const createdFrame = await Frame.create({
-        text,
-        author,
-        flock: null
-    });
+        const createdFrame = await Frame.create({
+            text,
+            author,
+            community: flockId,
+            image, 
+        });
 
-    //update user
-    await User.findByIdAndUpdate(author, {
-        $push: { frames: createdFrame._id}
-    })
+        // Update user
+        await User.findByIdAndUpdate(author, {
+            $push: { frames: createdFrame._id }
+        });
 
-    revalidatePath(path);
+        revalidatePath(path);
     } catch (error: any) {
-        throw new Error(`Error creating frame: ${error.message}`)
+        throw new Error(`Error creating frame: ${error.message}`);
     }
 }
+
+
 
 export async function fetchFrames(pageNumber = 1, pageSize=1) {
     connectToDB();
