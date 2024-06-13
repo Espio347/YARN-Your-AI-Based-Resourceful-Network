@@ -128,3 +128,44 @@ export async function addCommentToFrame(
        throw new Error(`Error adding Comment: $(error.message)`) 
     }
 }
+
+export async function likeFrame(frameId: string, userId: string, path: string) {
+    connectToDB();
+    try {
+        const frame = await Frame.findById(frameId);
+        if (!frame) {
+            throw new Error("Frame not found");
+        }
+
+        if (!frame.likes.includes(userId)) {
+            frame.likes.push(userId);
+            frame.likeCount += 1;
+            await frame.save();
+        }
+
+        revalidatePath(path);
+    } catch (error: any) {
+        throw new Error(`Error liking frame: ${error.message}`);
+    }
+}
+
+export async function unlikeFrame(frameId: string, userId: string, path: string) {
+    connectToDB();
+    try {
+        const frame = await Frame.findById(frameId);
+        if (!frame) {
+            throw new Error("Frame not found");
+        }
+
+        const index = frame.likes.indexOf(userId);
+        if (index !== -1) {
+            frame.likes.splice(index, 1);
+            frame.likeCount -= 1;
+            await frame.save();
+        }
+
+        revalidatePath(path);
+    } catch (error: any) {
+        throw new Error(`Error unliking frame: ${error.message}`);
+    }
+}

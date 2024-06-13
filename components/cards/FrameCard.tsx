@@ -1,12 +1,16 @@
+// components/cards/FrameCard.tsx
+
 import Image from "next/image";
 import Link from "next/link";
+import LikeButton from "@/app/(root)/LikeButton";
+import ShareButton from "@/components/ShareButton";
 
 interface Props {
     id: string;
     currentUserId: string;
     parentId: string | null;
     content: string;
-    image: string; 
+    image: string;
     author: {
         name: string;
         image: string;
@@ -24,6 +28,7 @@ interface Props {
         }
     }[]
     isComment?: boolean;
+    likes: string[];
 }
 
 const FrameCard = ({
@@ -36,15 +41,18 @@ const FrameCard = ({
     flock,
     createdAt,
     comments,
-    isComment
+    isComment,
+    likes = [],
 }: Props) => {
+    const isLiked = likes.includes(currentUserId);
+
     return (
         <article className={`flex x-full flex-col rounded-xl ${isComment ? 'px-0 xs:px-7' : 'bg-dark-2 p-7'}`}>
             <div className="flex items-start justify-between">
                 <div className="flex w-full flex-1 flex-row gap-4">
                     <div className="flex flex-col items-center">
                         <Link href={`/profile/${author.id}`} className="relative h-11 w-11">
-                            <Image 
+                            <Image
                                 src={author.image}
                                 alt="Profile image"
                                 fill
@@ -62,54 +70,32 @@ const FrameCard = ({
                         </Link>
 
                         {content && <p className="empty-2 text-small-regular text-light-2">{content}</p>}
-                            
                         {image && (
                             <div className="image-container">
-                                <Image 
+                                <Image
                                     src={image}
                                     alt="Posted Image"
-                                    width={500} // Adjust width and height as needed
+                                    width={500}
                                     height={500}
                                     className="posted-image"
                                 />
                             </div>
                         )}
-
                         <div className={`${isComment && 'mb-10'} mt-5 flex flex-col gap-3`}>
                             <div className="flex gap-3.5">
-                                <Image 
-                                    src="/assets/heart-gray.svg" 
-                                    alt="heart"
-                                    width={18}
-                                    height={18}
-                                    className="cursor-pointer object-contain"
-                                /> 
+                                <LikeButton initialIsLiked={isLiked} />
 
                                 <Link href={`/frame/${id}`}>
-                                    <Image 
-                                        src="/assets/reply.svg" 
+                                    <Image
+                                        src="/assets/reply.svg"
                                         alt="reply"
                                         width={18}
                                         height={18}
                                         className="cursor-pointer object-contain"
-                                    /> 
+                                    />
                                 </Link>
 
-                                <Image 
-                                    src="/assets/repost.svg" 
-                                    alt="repost"
-                                    width={18}
-                                    height={18}
-                                    className="cursor-pointer object-contain"
-                                /> 
-
-                                <Image 
-                                    src="/assets/share.svg" 
-                                    alt="share"
-                                    width={18}
-                                    height={18}
-                                    className="cursor-pointer object-contain"
-                                /> 
+                                <ShareButton postId={id} />
                             </div>
 
                             {isComment && comments.length > 0 && (

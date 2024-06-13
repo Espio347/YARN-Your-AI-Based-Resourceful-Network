@@ -1,4 +1,6 @@
-import mongoose from "mongoose";
+// models/frame.model.ts
+
+import mongoose from 'mongoose';
 
 const frameSchema = new mongoose.Schema({
     text: { type: String, required: true },
@@ -24,9 +26,19 @@ const frameSchema = new mongoose.Schema({
             ref: 'Frame'
         }
     ],
-    image: { 
-        type: String 
-    } 
+    image: {
+        type: String
+    },
+    likes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ],
+    likeCount: {
+        type: Number,
+        default: 0
+    }
 });
 
 const Frame = mongoose.models.Frame || mongoose.model('Frame', frameSchema);

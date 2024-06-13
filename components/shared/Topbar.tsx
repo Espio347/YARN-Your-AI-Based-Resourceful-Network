@@ -2,7 +2,7 @@ import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import Image from "next/image";
 import Link from "next/link";
-import { focusModeLink } from '@/constants';
+import Chatbot from '../chatbot/Chatbot';
 
 function Topbar() {
   return (
@@ -18,16 +18,17 @@ function Topbar() {
 
       {/* Right section */}
       <div className="flex items-center gap-1">
-        {/* Focus Mode Button */}
-        {focusModeLink.map((link, index) => (
-          <Link href={link.route} key={index} passHref>
-            <div className="flex items-center gap-1 cursor-pointer">
-              <Image className="rounded-lg" src={link.imgURL} alt="Focus Mode" width={32} height={32} />
-            </div>
-          </Link>
-        ))}
 
         {/* Other elements on the right */}
+        <div className="flex">
+        <div className="block md:hidden px-4">
+              <div className="flex cursor-pointer">
+                <Link href="/chatbotmobile">
+                <Image src="/assets/chat.svg" alt="logout" width={24} height={24} />
+                </Link>
+              </div>
+        </div>
+
         <div className="block md:hidden">
           <SignedIn>
             <SignOutButton>
@@ -37,7 +38,7 @@ function Topbar() {
             </SignOutButton>
           </SignedIn>
         </div>
-
+        </div>
         {/* Organization Switcher */}
         <OrganizationSwitcher 
           appearance={{

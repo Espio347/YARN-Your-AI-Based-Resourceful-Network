@@ -50,7 +50,6 @@ export async function fetchUser(userId: string) {
     try {
         await connectToDB();
         return await User.findOne({ id: userId });
-        //To-Do Populate Communities
     } catch (error: any) {
         throw new Error(`Failed to fetch user: ${error.message}`);
     }
@@ -87,32 +86,31 @@ export async function fetchUsers({
     pageNumber = 1,
     pageSize = 20,
     sortBy = "desc"
- }: {
+}: {
     userId: string,
     searchString?: string,
     pageNumber?: number,
     pageSize?: number,
     sortBy?: SortOrder
- }) {
+}) {
     try {
-        connectToDB();
+        await connectToDB();
 
         const skipAmount = (pageNumber - 1) * pageSize;
-
         const regex = new RegExp(searchString, "i");
 
-        const query:FilterQuery<typeof User> = {
-            id: {$ne: userId}
-        }
+        const query: FilterQuery<typeof User> = {
+            id: { $ne: userId }
+        };
 
-        if(searchString.trim() !== '') {
+        if (searchString.trim() !== '') {
             query.$or = [
-                { username: { $regex: regex}},
-                { name: { $regex: regex}}
-            ]
+                { username: { $regex: regex } },
+                { name: { $regex: regex } }
+            ];
         }
 
-        const sortOptions = { createdAt: sortBy};
+        const sortOptions = { createdAt: sortBy };
 
         const usersQuery = User.find(query)
             .sort(sortOptions)
@@ -125,9 +123,9 @@ export async function fetchUsers({
 
         const isNext = totalUsersCount > skipAmount + users.length;
 
-        return {users, isNext};
+        return { users, isNext };
     } catch (error: any) {
-        throw new Error(`Failed to fetch users: ${error.message}`)
+        throw new Error(`Failed to fetch users: ${error.message}`);
     }
 }
 

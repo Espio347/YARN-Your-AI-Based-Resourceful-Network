@@ -9,3 +9,7 @@ export const FrameValidation = z.object({
 export const CommentValidation = z.object({
     frame: z.string().min(3, {message: 'Minimum 3 Characters'}),
 })
+
+export const textValidation = z.object({
+    frame: z.string() || ''
+})

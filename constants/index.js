@@ -20,33 +20,23 @@ export const sidebarLinks = [
       label: "Create",
     },
     {
-      imgURL: "/assets/community.svg",
-      route: "/flocks",
-      label: "Flocks",
-    },
-    {
       imgURL: "/assets/user.svg",
       route: "/profile",
       label: "Profile",
+    },
+    {
+      imgURL: "/assets/loom.svg",
+      route: "/summarizer",
+      label: "Loom",
     },
   ];
   
   export const profileTabs = [
     { value: "frames", label: "Frames", icon: "/assets/reply.svg" },
-    { value: "replies", label: "Replies", icon: "/assets/members.svg" },
-    { value: "tagged", label: "Tagged", icon: "/assets/tag.svg" },
   ];
   
   export const flockTabs = [
     { value: "frames", label: "Frames", icon: "/assets/reply.svg" },
     { value: "members", label: "Members", icon: "/assets/members.svg" },
     { value: "requests", label: "Requests", icon: "/assets/request.svg" },
-  ];
-
-  export const focusModeLink = [
-    {
-      imgURL: "/assets/focus.gif",
-      route: "/zero-in-mode(beta)",
-      label: "Focus Mode"
-    }
   ];

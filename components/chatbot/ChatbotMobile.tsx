@@ -116,8 +116,8 @@ export default function Page() {
     };
 
     return (
-     <section className="custom-scrollbar max-lg:hidden">
-        <section className="rightsidebar h-screen flex flex-col bg-dark-2 p-4 shadow-md">
+     <section className="custom-scrollbar">
+        <section className=" h-screen flex flex-col bg-dark-2 p-4 shadow-md">
             <ChatHistory chatHistory={chatHistory} />
             <div className="flex">
                 <input

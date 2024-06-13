@@ -116,6 +116,22 @@
   }
 }
 
+.account-form_input {
+  background: transparent;
+  color: inherit; /* Ensure text color matches the intended style */
+  resize: none; /* Prevent resizing of the textarea */
+  z-index: 10; /* Ensure it is above the background but below the overlay */
+}
+
+.markdown-overlay {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  pointer-events: none; /* Allow interactions to pass through to the textarea */
+  color: inherit; /* Ensure the text color matches the parent container */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+
 /* Clerk Responsive fix */
 .cl-organizationSwitcherTrigger .cl-userPreview .cl-userPreviewTextContainer {
   @apply max-sm:hidden;
@@ -142,6 +158,11 @@
 .account-form_image-label {
   @apply flex h-24 w-24 items-center justify-center rounded-full bg-dark-4 !important;
 }
+
+.frame-form_image-label {
+  @apply flex h-24 w-24 items-center justify-center bg-dark-4 !important;
+}
+
 
 .account-form_image-input {
   @apply cursor-pointer border-none bg-transparent outline-none file:text-blue !important;
