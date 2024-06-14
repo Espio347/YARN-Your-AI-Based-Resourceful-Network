@@ -27,16 +27,12 @@ Progress Updates
 [✓] Implemented Search Page(Searchbar is Yert To Complete)
 [✓] Implemented Activity Page
 [✓] Implemented Fluffy, the AI Chatbot
+[✓] Finalised with Small Changes and Fixes
 ```
 
 # Development Notes
 
- - Need to Design and Implement Logo (Now Done)
- - Need to Implement Favicon (Now Done)
-
-# APP TIPS
-
-04:51:30
+ Ready for Showcase
 
 First, run the development server:
 
